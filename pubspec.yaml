@@ -38,7 +38,7 @@ dependencies:
 
 flutter_icons:
   android: true
-  image_path: "image/sun.png"
+  image_path: "image/sun.png" 
 
 dev_dependencies:
   flutter_test:
