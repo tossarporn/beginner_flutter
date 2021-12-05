@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  var app = MaterialApp(
-    title: "my App",
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text("hello flutter"),
+  //var app = Myapp();
+  //runApp(app); เขียนแบบสร้างตัวแปร
+  runApp(Myapp());
+}
+
+//สร้าง widget แบบ StatelessWidget ค่าคงที่
+class Myapp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "my App",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("hello flutter"),
+        ),
+        body: Text("hello people"),
       ),
-      body: Text("hello people"),
-    ),
-    theme: ThemeData(primarySwatch: Colors.orange),
-  );
-  runApp(app);
+      theme: ThemeData(primarySwatch: Colors.orange),
+    );
+  }
 }
