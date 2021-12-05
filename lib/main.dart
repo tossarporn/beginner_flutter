@@ -9,6 +9,7 @@ void main() {
       ),
       body: Text("hello people"),
     ),
+    theme: ThemeData(primarySwatch: Colors.orange),
   );
   runApp(app);
 }
