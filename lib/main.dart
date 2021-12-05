@@ -17,8 +17,11 @@ class Myapp extends StatelessWidget {
           title: Text("hello flutter"),
         ),
         body: Center(
-          child: Text("center_widget"),
+          child: Text(
+            "center_widget",
+            style: TextStyle(fontSize: 30, color: Colors.purple),
           ),
+        ),
       ),
       theme: ThemeData(primarySwatch: Colors.orange),
     );
