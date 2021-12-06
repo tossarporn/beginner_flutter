@@ -46,13 +46,19 @@ class _MyhomePageState extends State<MyhomePage> {
 //เตรียมข้อมูล
   List<Widget> getData(int count) {
 //กลุ่มข้อมูลTextWidget
+//ListViewจะใช้แสดงขนาดเล็ก(4-10รายการ)
+//ListView.bullderจะใช้แสดงขนาดใหญ่ผ่านPropertiesชื่อว่า"itemcount"
     List<Widget> data = [];
     for (var i = 0; i < count; i++) {
-      data.add(Text(
-        "${i + 1}เมนู",
-        style: TextStyle(fontSize: 25),
-      ));
+      var menu = ListTile(
+        title: Text(
+          "เมนู${i + 1}",
+          style: TextStyle(fontSize: 25),
+        ),
+        subtitle: Text("หัวข้อย่อย ${i + 1}"),
+      );
+      data.add(menu);
     } //loopDataTextWidget
     return data;
-  }
+  } //function
 }
