@@ -13,7 +13,7 @@ class Myapp extends StatelessWidget {
     return MaterialApp(
       title: "my App",
       home: MyhomePage(),
-      theme: ThemeData(primarySwatch: Colors.pink),
+      theme: ThemeData(primarySwatch: Colors.purple),
     );
   }
 }
@@ -49,9 +49,13 @@ class _MyhomePageState extends State<MyhomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child:Icon(Icons.add)//สามารถเพิ่ม text()ได้,
-      ),
+          onPressed: () {
+            setState(() {
+              number++;
+            });
+          },
+          child: Icon(Icons.add) //สามารถเพิ่ม text()ได้,
+          ),
     );
   }
 }
