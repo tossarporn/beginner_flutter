@@ -17,10 +17,13 @@ class Myapp extends StatelessWidget {
           title: Text("hello flutter"),
         ),
         body: Center(
-            child: 
-            Image(
-          image: NetworkImage(
-              "https://cdn.pixabay.com/photo/2021/11/23/13/32/forest-6818683__340.jpg"),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,//กำหนดตำแหน่งwidgetในแนวตั้ง(start,center,end+spaceBetween(คำนวณระยะห่างwidgetชิดขอบ),spaceAround(คำนวณระยะห่างwidgetไม่ชิดขอบ))
+            children: [
+              Text("hello flutter"),
+              Text("hello dart"),
+              Text("hello google"),
+            ],
           ),
         ),
       ),
