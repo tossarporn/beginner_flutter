@@ -20,29 +20,38 @@ class Myapp extends StatelessWidget {
 
 //สร้าง widget แบบ StatefulWidget เปลี่ยนแปลงค่าได้
 class MyhomePage extends StatefulWidget {
-  const MyhomePage({ Key? key }) : super(key: key);
+  const MyhomePage({Key? key}) : super(key: key);
 
   @override
   _MyhomePageState createState() => _MyhomePageState();
 }
 
 class _MyhomePageState extends State<MyhomePage> {
+  int number = 1; //การสร้าง state
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("begin_flutter"),
+      appBar: AppBar(
+        title: Text("begin_flutter"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment
+              .center, //กำหนดตำแหน่งwidgetในแนวตั้ง(start,center,end+spaceBetween(คำนวณระยะห่างwidgetชิดขอบ),spaceAround(คำนวณระยะห่างwidgetไม่ชิดขอบ))
+          children: [
+            Text("กดปุ่มเพื่อเพิ่มจำนวน"),
+            Text(
+              number.toString(), //"$number"แปลง int เป็น string ใช้อันไหนก็ได้
+              style: TextStyle(fontSize: 60),
+            ),
+          ],
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,//กำหนดตำแหน่งwidgetในแนวตั้ง(start,center,end+spaceBetween(คำนวณระยะห่างwidgetชิดขอบ),spaceAround(คำนวณระยะห่างwidgetไม่ชิดขอบ))
-            children: [
-              Text("hello flutter"),
-              Text("hello dart"),
-              Text("hello google"),
-            ],
-          ),
-        ),
-      );
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child:Icon(Icons.add)//สามารถเพิ่ม text()ได้,
+      ),
+    );
   }
 }
