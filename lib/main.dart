@@ -31,6 +31,19 @@ class _MyhomePageState extends State<MyhomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //กลุ่มข้อมูลTextWidget
+    List<Widget> data = [];
+    data.add(Text("กดปุ่มเพื่อเพิ่มจำนวนตัวเลข"));
+    data.add(
+      Text(
+        number.toString(), //"$number"แปลง int เป็น string ใช้อันไหนก็ได้
+        style: TextStyle(fontSize: 60),
+      ),
+    );
+    for(var i=0;i<10;i++){
+        data.add(Text("${i+1}Numbers"));
+    }//loopDataTextWidget
+    
     return Scaffold(
       appBar: AppBar(
         title: Text("begin_flutter"),
@@ -39,13 +52,7 @@ class _MyhomePageState extends State<MyhomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment
               .center, //กำหนดตำแหน่งwidgetในแนวตั้ง(start,center,end+spaceBetween(คำนวณระยะห่างwidgetชิดขอบ),spaceAround(คำนวณระยะห่างwidgetไม่ชิดขอบ))
-          children: [
-            Text("กดปุ่มเพื่อเพิ่มจำนวน"),
-            Text(
-              number.toString(), //"$number"แปลง int เป็น string ใช้อันไหนก็ได้
-              style: TextStyle(fontSize: 60),
-            ),
-          ],
+          children: data,
         ),
       ),
       floatingActionButton: FloatingActionButton(
