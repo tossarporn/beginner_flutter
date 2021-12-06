@@ -32,33 +32,13 @@ class _MyhomePageState extends State<MyhomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("เลือกเมนู"),
-      ),
-      body: Center(
-        child: ListView(
-          children: getData(30),
+        appBar: AppBar(
+          title: Text("เลือกเมนู"),
         ),
-      ),
-    );
+        body: ListView.builder(itemCount: 15, itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text("เมนูที่${index+1}"),
+          );
+        }));
   }
-
-//เตรียมข้อมูล
-  List<Widget> getData(int count) {
-//กลุ่มข้อมูลTextWidget
-//ListViewจะใช้แสดงขนาดเล็ก(4-10รายการ)
-//ListView.bullderจะใช้แสดงขนาดใหญ่ผ่านPropertiesชื่อว่า"itemcount"
-    List<Widget> data = [];
-    for (var i = 0; i < count; i++) {
-      var menu = ListTile(
-        title: Text(
-          "เมนู${i + 1}",
-          style: TextStyle(fontSize: 25),
-        ),
-        subtitle: Text("หัวข้อย่อย ${i + 1}"),
-      );
-      data.add(menu);
-    } //loopDataTextWidget
-    return data;
-  } //function
 }
