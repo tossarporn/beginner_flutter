@@ -6,15 +6,32 @@ void main() {
   runApp(Myapp());
 }
 
-//สร้าง widget แบบ StatelessWidget ค่าคงที่
+//สร้าง widget แบบ StatelessWidget เปลี่ยนแปลงค่าไม่ได้ มีหน้าที่แสดง themeApp()
 class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "my App",
-      home: Scaffold(
+      home: MyhomePage(),
+      theme: ThemeData(primarySwatch: Colors.pink),
+    );
+  }
+}
+
+//สร้าง widget แบบ StatefulWidget เปลี่ยนแปลงค่าได้
+class MyhomePage extends StatefulWidget {
+  const MyhomePage({ Key? key }) : super(key: key);
+
+  @override
+  _MyhomePageState createState() => _MyhomePageState();
+}
+
+class _MyhomePageState extends State<MyhomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(
-          title: Text("hello flutter"),
+          title: Text("begin_flutter"),
         ),
         body: Center(
           child: Column(
@@ -26,8 +43,6 @@ class Myapp extends StatelessWidget {
             ],
           ),
         ),
-      ),
-      theme: ThemeData(primarySwatch: Colors.orange),
-    );
+      );
   }
 }
