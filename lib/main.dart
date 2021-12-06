@@ -28,42 +28,31 @@ class MyhomePage extends StatefulWidget {
 
 class _MyhomePageState extends State<MyhomePage> {
   int number = 1; //การสร้าง state
-
+  //แสดงผลข้อมูล
   @override
   Widget build(BuildContext context) {
-    //กลุ่มข้อมูลTextWidget
-    List<Widget> data = [];
-    data.add(Text("กดปุ่มเพื่อเพิ่มจำนวนตัวเลข"));
-    data.add(
-      Text(
-        number.toString(), //"$number"แปลง int เป็น string ใช้อันไหนก็ได้
-        style: TextStyle(fontSize: 60),
-      ),
-    );
-    for(var i=0;i<10;i++){
-        data.add(Text("${i+1}Numbers"));
-    }//loopDataTextWidget
-    
     return Scaffold(
       appBar: AppBar(
-        title: Text("begin_flutter"),
+        title: Text("เลือกเมนู"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment
-              .center, //กำหนดตำแหน่งwidgetในแนวตั้ง(start,center,end+spaceBetween(คำนวณระยะห่างwidgetชิดขอบ),spaceAround(คำนวณระยะห่างwidgetไม่ชิดขอบ))
-          children: data,
+        child: ListView(
+          children: getData(30),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: addNumber, child: Icon(Icons.add) //สามารถเพิ่ม text()ได้,
-          ),
     );
   }
 
-  void addNumber() {
-    setState(() {
-      number++;
-    }); //function_addNumber
+//เตรียมข้อมูล
+  List<Widget> getData(int count) {
+//กลุ่มข้อมูลTextWidget
+    List<Widget> data = [];
+    for (var i = 0; i < count; i++) {
+      data.add(Text(
+        "${i + 1}เมนู",
+        style: TextStyle(fontSize: 25),
+      ));
+    } //loopDataTextWidget
+    return data;
   }
 }
