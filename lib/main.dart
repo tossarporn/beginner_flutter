@@ -49,13 +49,14 @@ class _MyhomePageState extends State<MyhomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              number++;
-            });
-          },
-          child: Icon(Icons.add) //สามารถเพิ่ม text()ได้,
+          onPressed: addNumber, child: Icon(Icons.add) //สามารถเพิ่ม text()ได้,
           ),
     );
+  }
+
+  void addNumber() {
+    setState(() {
+      number++;
+    }); //function_addNumber
   }
 }
