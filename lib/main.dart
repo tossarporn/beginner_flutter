@@ -48,6 +48,12 @@ class _MyhomePageState extends State<MyhomePage> {
             leading: Image.asset(food.img),
             title: Text(food.name,style: TextStyle(fontSize: 30),),
             subtitle: Text("ราคา"+food.price+"บาท"),
+            // onTap:(){
+            //   print("คุณเลือกอาหารชื่อว่า"+food.name);
+            // }
+            onTap:()=>{
+              print("คุณเลือกอาหารชื่อว่า"+food.name)
+            }//arrow_function_object
           );
         }));
   }
