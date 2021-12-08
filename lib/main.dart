@@ -30,10 +30,10 @@ class MyhomePage extends StatefulWidget {
 class _MyhomePageState extends State<MyhomePage> {
   //กลุ่มข้อมูล
   List<FoodMenu> menu = [
-    FoodMenu("กุ้งเผา","500"),
-    FoodMenu("กระเพาหมู","80"),
-    FoodMenu("ส้มตำ","60"),
-    FoodMenu("ผัดไท","40"),
+    FoodMenu("กุ้งเผา","500","assets/food_img/Grilled Shrimp.jpg"),
+    FoodMenu("กระเพราหมู","80","assets/food_img/fried_basil.jpg"),
+    FoodMenu("ผัดไท","60","assets/food_img/Pad Thai.jpg"),
+    FoodMenu("ส้มตำ","40","assets/food_img/papaya salad.jpg"),
   ];
   //แสดงผลข้อมูล
   @override
@@ -45,6 +45,7 @@ class _MyhomePageState extends State<MyhomePage> {
         body: ListView.builder(itemCount: menu.length, itemBuilder: (BuildContext context, int index) {
           FoodMenu food=menu[index];
           return ListTile(
+            leading: Image.asset(food.img),
             title: Text(food.name,style: TextStyle(fontSize: 30),),
             subtitle: Text("ราคา"+food.price+"บาท"),
           );
