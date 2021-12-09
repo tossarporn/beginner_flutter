@@ -14,7 +14,7 @@ class Myapp extends StatelessWidget {
     return MaterialApp(
       title: "my App",
       home: MyhomePage(),
-      theme: ThemeData(primarySwatch: Colors.purple),
+      theme: ThemeData(primarySwatch: Colors.lightBlue),
     );
   }
 }
@@ -40,21 +40,23 @@ class _MyhomePageState extends State<MyhomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("เลือกเมนูอาหาร"),
+          title: Text("บัญชีของฉัน"),
         ),
-        body: ListView.builder(itemCount: menu.length, itemBuilder: (BuildContext context, int index) {
-          FoodMenu food=menu[index];
-          return ListTile(
-            leading: Image.asset(food.img),
-            title: Text(food.name,style: TextStyle(fontSize: 30),),
-            subtitle: Text("ราคา"+food.price+"บาท"),
-            // onTap:(){
-            //   print("คุณเลือกอาหารชื่อว่า"+food.name);
-            // }
-            onTap:()=>{
-              print("คุณเลือกอาหารชื่อว่า"+food.name)
-            }//arrow_function_object
-          );
-        }));
+        body: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(color: Colors.green,borderRadius: BorderRadius.circular(10)),
+              height: 100,
+            ),
+            Container(
+              decoration: BoxDecoration(color: Colors.lightBlue,borderRadius: BorderRadius.circular(10)),
+              height: 100,
+            ),
+            Container(
+              decoration: BoxDecoration(color: Colors.orange,borderRadius: BorderRadius.circular(10)),
+              height: 100,
+            ),
+          ],)
+      );
   }
 }
