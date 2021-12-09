@@ -30,10 +30,10 @@ class MyhomePage extends StatefulWidget {
 class _MyhomePageState extends State<MyhomePage> {
   //กลุ่มข้อมูล
   List<FoodMenu> menu = [
-    FoodMenu("กุ้งเผา","500","assets/food_img/Grilled Shrimp.jpg"),
-    FoodMenu("กระเพราหมู","80","assets/food_img/fried_basil.jpg"),
-    FoodMenu("ผัดไท","60","assets/food_img/Pad Thai.jpg"),
-    FoodMenu("ส้มตำ","40","assets/food_img/papaya salad.jpg"),
+    FoodMenu("กุ้งเผา", "500", "assets/food_img/Grilled Shrimp.jpg"),
+    FoodMenu("กระเพราหมู", "80", "assets/food_img/fried_basil.jpg"),
+    FoodMenu("ผัดไท", "60", "assets/food_img/Pad Thai.jpg"),
+    FoodMenu("ส้มตำ", "40", "assets/food_img/papaya salad.jpg"),
   ];
   //แสดงผลข้อมูล
   @override
@@ -42,21 +42,38 @@ class _MyhomePageState extends State<MyhomePage> {
         appBar: AppBar(
           title: Text("บัญชีของฉัน"),
         ),
-        body: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(color: Colors.green,borderRadius: BorderRadius.circular(10)),
-              height: 100,
-            ),
-            Container(
-              decoration: BoxDecoration(color: Colors.lightBlue,borderRadius: BorderRadius.circular(10)),
-              height: 100,
-            ),
-            Container(
-              decoration: BoxDecoration(color: Colors.orange,borderRadius: BorderRadius.circular(10)),
-              height: 100,
-            ),
-          ],)
+        body: Padding(
+          padding: const EdgeInsets.all(10.0),//ระยะห่างร่วม
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(20.0),//ระยะห่างเจาะจงในContainerนั้นๆ
+                decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(10)),
+                height: 100,
+                child: Row(
+                  children: [
+                    Text("ยอดคงเหลือ"),
+                    Text("10,000"),
+                  ],
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.lightBlue,
+                    borderRadius: BorderRadius.circular(10)),
+                height: 100,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.circular(10)),
+                height: 100,
+              ),
+            ],
+          ),
+        )
       );
   }
 }
