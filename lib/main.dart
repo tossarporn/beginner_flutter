@@ -14,7 +14,7 @@ class Myapp extends StatelessWidget {
     return MaterialApp(
       title: "my App",
       home: MyhomePage(),
-      theme: ThemeData(primarySwatch: Colors.lightBlue),
+      theme: ThemeData(primarySwatch: Colors.purple),
     );
   }
 }
@@ -40,40 +40,66 @@ class _MyhomePageState extends State<MyhomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("บัญชีของฉัน"),
+          title: Text("บัญชีของฉัน",
+              style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold)),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(10.0),//ระยะห่างร่วม
+          padding: const EdgeInsets.all(10.0), //ระยะห่างร่วม
           child: Column(
             children: [
               Container(
-                padding: const EdgeInsets.all(20.0),//ระยะห่างเจาะจงในContainerนั้นๆ
+                padding:
+                    const EdgeInsets.all(20.0), //ระยะห่างเจาะจงในContainerนั้นๆ
                 decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: Colors.lightBlue,
                     borderRadius: BorderRadius.circular(10)),
-                height: 100,
+                height: 120,
                 child: Row(
                   children: [
-                    Text("ยอดคงเหลือ"),
-                    Text("10,000"),
+                    Text(
+                      "ยอดคงเหลือ",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text("10,000",
+                        style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),
               Container(
+                padding:
+                    const EdgeInsets.all(20.0), //ระยะห่างเจาะจงในContainerนั้นๆ
                 decoration: BoxDecoration(
-                    color: Colors.lightBlue,
+                    color: Colors.green,
                     borderRadius: BorderRadius.circular(10)),
-                height: 100,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(10)),
-                height: 100,
+                height: 120,
+                child: Row(
+                  children: [
+                    Text(
+                      "รายรับ",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text("15,000",
+                        style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold)),
+                  ],
+                ),
               ),
             ],
           ),
-        )
-      );
+        ));
   }
 }
