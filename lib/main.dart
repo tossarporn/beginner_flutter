@@ -58,6 +58,7 @@ class _MyhomePageState extends State<MyhomePage> {
                     borderRadius: BorderRadius.circular(10)),
                 height: 120,
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,//กำหนดตำแหน่งภายในContainer
                   children: [
                     Text(
                       "ยอดคงเหลือ",
@@ -66,11 +67,15 @@ class _MyhomePageState extends State<MyhomePage> {
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
-                    Text("10,000",
-                        style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold)),
+                    Expanded(
+                      child: Text("10,000",
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.right,
+                              ),
+                    ),
                   ],
                 ),
               ),
@@ -82,6 +87,7 @@ class _MyhomePageState extends State<MyhomePage> {
                     borderRadius: BorderRadius.circular(10)),
                 height: 120,
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,//กำหนดตำแหน่งภายในContainer
                   children: [
                     Text(
                       "รายรับ",
@@ -90,11 +96,44 @@ class _MyhomePageState extends State<MyhomePage> {
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
-                    Text("15,000",
-                        style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold)),
+                    Expanded(
+                      child: Text("15,000",
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.right,
+                              ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                padding:
+                    const EdgeInsets.all(20.0), //ระยะห่างเจาะจงในContainerนั้นๆ
+                decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(10)),
+                height: 120,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,//กำหนดตำแหน่งภายในContainer
+                  children: [
+                    Text(
+                      "รายจ่าย",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Expanded(
+                      child: Text("5,000",
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.right,//กำหนดระยะห่างตัวอักษร
+                              ),
+                    ),
                   ],
                 ),
               ),
