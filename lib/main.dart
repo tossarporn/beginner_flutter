@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'FoodMenu.dart';
-
+import 'Money_Box.dart';
 void main() {
   //var app = Myapp();
   //runApp(app); เขียนแบบสร้างตัวแปร
@@ -50,127 +50,15 @@ class _MyhomePageState extends State<MyhomePage> {
           padding: const EdgeInsets.all(10.0), //ระยะห่างร่วม
           child: Column(
             children: [
-              Container(
-                padding:
-                    const EdgeInsets.all(20.0), //ระยะห่างเจาะจงในContainerนั้นๆ
-                decoration: BoxDecoration(
-                    color: Colors.lightBlue,
-                    borderRadius: BorderRadius.circular(10)),
-                height: 120,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,//กำหนดตำแหน่งภายในContainer
-                  children: [
-                    Text(
-                      "ยอดคงเหลือ",
-                      style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Expanded(
-                      child: Text("10,000",
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.right,
-                              ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 5,),
-              Container(
-                padding:
-                    const EdgeInsets.all(20.0), //ระยะห่างเจาะจงในContainerนั้นๆ
-                decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(10)),
-                height: 100,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,//กำหนดตำแหน่งภายในContainer
-                  children: [
-                    Text(
-                      "รายรับ",
-                      style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Expanded(
-                      child: Text("15,000",
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.right,
-                              ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 5,),
-              Container(
-                padding:
-                    const EdgeInsets.all(20.0), //ระยะห่างเจาะจงในContainerนั้นๆ
-                decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(10)),
-                height: 100,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,//กำหนดตำแหน่งภายในContainer
-                  children: [
-                    Text(
-                      "รายจ่าย",
-                      style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Expanded(
-                      child: Text("5,000",
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.right,//กำหนดระยะห่างตัวอักษร
-                              ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),//ระยะห่างระหว่างContainer
-              Container(
-                padding:
-                    const EdgeInsets.all(20.0), //ระยะห่างเจาะจงในContainerนั้นๆ
-                decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(10)),
-                height: 100,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,//กำหนดตำแหน่งภายในContainer
-                  children: [
-                    Text(
-                      "ค้างชำระ",
-                      style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Expanded(
-                      child: Text("1,200",
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.right,//กำหนดระยะห่างตัวอักษร
-                              ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+              Money_Box("ยอดคงเหลือ", 10000,Colors.lightBlue, 120),
+              SizedBox(height: 5),
+              Money_Box("รายรับ", 15000,Colors.green, 120),
+              SizedBox(height: 5),
+              Money_Box("รายจ่าย", 3000,Colors.red, 120),
+              SizedBox(height: 5),
+              Money_Box("ค้างชำระ", 1200,Colors.orange, 120),
+            ]
+          )
         ));
   }
 }
