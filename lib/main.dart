@@ -28,16 +28,17 @@ class MyhomePage extends StatefulWidget {
 }
 
 class _MyhomePageState extends State<MyhomePage> {
+  int number = 0;
   //กลุ่มข้อมูล
-  List<FoodMenu> menu = [
-    FoodMenu("กุ้งเผา", "500", "assets/food_img/Grilled Shrimp.jpg"),
-    FoodMenu("กระเพราหมู", "80", "assets/food_img/fried_basil.jpg"),
-    FoodMenu("ผัดไท", "60", "assets/food_img/Pad Thai.jpg"),
-    FoodMenu("ส้มตำ", "40", "assets/food_img/papaya salad.jpg"),
-  ];
+  @override
+  void initState() {
+    super.initState();
+    print("เรียกใช้งาน initState");
+  }
   //แสดงผลข้อมูล
   @override
   Widget build(BuildContext context) {
+    print("เรียกใช้งาน build");
     return Scaffold(
         appBar: AppBar(
           title: Text("บัญชีของฉัน",
@@ -46,19 +47,19 @@ class _MyhomePageState extends State<MyhomePage> {
                   color: Colors.white,
                   fontWeight: FontWeight.bold)),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(10.0), //ระยะห่างร่วม
-          child: Column(
-            children: [
-              Money_Box("ยอดคงเหลือ", 10000,Colors.lightBlue, 120),
-              SizedBox(height: 5),
-              Money_Box("รายรับ", 15000,Colors.green, 120),
-              SizedBox(height: 5),
-              Money_Box("รายจ่าย", 3000,Colors.red, 120),
-              SizedBox(height: 5),
-              Money_Box("ค้างชำระ", 1200,Colors.orange, 120),
-            ]
-          )
-        ));
+        body: Column(
+          children: [
+            Text(number.toString(),style: TextStyle(fontSize: 30),)
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            setState(() {
+              number++;
+            });
+          },
+          child: Icon(Icons.add),
+          ),  
+    );
   }
 }
