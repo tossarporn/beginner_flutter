@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'FoodMenu.dart';
 import 'Money_Box.dart';
-void main() {
+import 'asychronous_future.dart';
+void main() async {
   //var app = Myapp();
   //runApp(app); เขียนแบบสร้างตัวแปร
   runApp(Myapp());
+  print(await loginUser());//รอข้อมูล
+  
 }
 
 //สร้าง widget แบบ StatelessWidget เปลี่ยนแปลงค่าไม่ได้ มีหน้าที่แสดง themeApp()
