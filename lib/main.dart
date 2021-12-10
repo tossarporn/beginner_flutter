@@ -79,13 +79,14 @@ class _MyhomePageState extends State<MyhomePage> {
                   ],
                 ),
               ),
+              SizedBox(height: 5,),
               Container(
                 padding:
                     const EdgeInsets.all(20.0), //ระยะห่างเจาะจงในContainerนั้นๆ
                 decoration: BoxDecoration(
                     color: Colors.green,
                     borderRadius: BorderRadius.circular(10)),
-                height: 120,
+                height: 100,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,//กำหนดตำแหน่งภายในContainer
                   children: [
@@ -108,13 +109,14 @@ class _MyhomePageState extends State<MyhomePage> {
                   ],
                 ),
               ),
+              SizedBox(height: 5,),
               Container(
                 padding:
                     const EdgeInsets.all(20.0), //ระยะห่างเจาะจงในContainerนั้นๆ
                 decoration: BoxDecoration(
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(10)),
-                height: 120,
+                height: 100,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,//กำหนดตำแหน่งภายในContainer
                   children: [
@@ -127,6 +129,36 @@ class _MyhomePageState extends State<MyhomePage> {
                     ),
                     Expanded(
                       child: Text("5,000",
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.right,//กำหนดระยะห่างตัวอักษร
+                              ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),//ระยะห่างระหว่างContainer
+              Container(
+                padding:
+                    const EdgeInsets.all(20.0), //ระยะห่างเจาะจงในContainerนั้นๆ
+                decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.circular(10)),
+                height: 100,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,//กำหนดตำแหน่งภายในContainer
+                  children: [
+                    Text(
+                      "ค้างชำระ",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Expanded(
+                      child: Text("1,200",
                           style: TextStyle(
                               fontSize: 25,
                               color: Colors.white,
