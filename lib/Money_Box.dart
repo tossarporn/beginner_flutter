@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Money_Box extends StatelessWidget {
   String title;//ชื่อหมวดหมู่ / รายการ
@@ -26,7 +27,7 @@ class Money_Box extends StatelessWidget {
           ),
           Expanded(
             child: Text(
-              amount.toString(),
+              '${NumberFormat("#,###.##").format(amount)}',
               style: TextStyle(
                   fontSize: 25,
                   color: Colors.white,
